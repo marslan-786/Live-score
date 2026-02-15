@@ -5,10 +5,10 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # سسٹم کی ضروری لائبریریز اور Tesseract OCR انسٹال کریں
+# (یہاں سے libgl1-mesa-glx نکال دیا گیا ہے)
 RUN apt-get update && apt-get install -y \
     tesseract-ocr \
     libtesseract-dev \
-    libgl1-mesa-glx \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
